@@ -159,13 +159,14 @@
             
             var phoneNumber = "212671044864";
             
+            // استخدمنا الرموز الخاصة بالأكواد باش ما يوقعش مشكل في قراءة الإيموجيات
             var message = "سلام عليكم، بغيت نطلب هاد المنتج:\n\n" +
-                          "📦 المنتج: العسل الطبيعي\n" +
-                          "💰 الثمن: 200 درهم\n\n" +
-                          "👤 الاسم: " + name + "\n" +
-                          "📞 الهاتف: " + phone + "\n" +
-                          "📍 العنوان: " + address + "\n" +
-                          "🌐 المدينة: " + city;
+                          "\uD83D\uDCE6 المنتج: العسل الطبيعي\n" +
+                          "\uD83D\uDCB0 الثمن: 200 درهم\n\n" +
+                          "\uD83D\uDC64 الاسم: " + name + "\n" +
+                          "\uD83D\uDCDE الهاتف: " + phone + "\n" +
+                          "\uD83D\uDCCD العنوان: " + address + "\n" +
+                          "\uD83C\uDF10 المدينة: " + city;
             
             var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
             
