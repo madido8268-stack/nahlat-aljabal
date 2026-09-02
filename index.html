@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نحلة الجبال ادوتنان - العسل الحر</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: right;
+        }
+        header {
+            background-color: #1a365d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #cbd5e0;
+            padding: 0 15px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            max-height: 350px;
+            object-fit: cover;
+        }
+        .product-title {
+            text-align: center;
+            font-size: 20px;
+            margin: 15px 0 5px;
+            color: #2d3748;
+        }
+        .product-desc {
+            text-align: center;
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .price {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #38a169;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .btn-order {
+            background-color: #38a169;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-order:hover {
+            background-color: #2f855a;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #a0aec0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>نحلة الجبال ادوتنان</h1>
+        <p>عسل حر وطبيعي 100% مستخلص بعناية من أعماق جبال أداوتنان العريقة، حيث الطبيعة العذراء والأعشاب الطبية النادرة.</p>
+    </header>
+
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1587049352847-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="العسل الحر" class="product-image">
+        
+        <h2 class="product-title">عسل الدغموس الجبلي - كيلو واحد</h2>
+        <p class="product-desc">يتميز بجودته العالية ومذاقه الفريد الغني بالفوائد الصحية لتعزيز المناعة وطاقة الجسم، معبأ في ظروف صحية ومضمونة ليصلك إلى باب بيتك.</p>
+        <div class="price">200 درهم</div>
+
+        <form id="orderForm" onsubmit="sendToWhatsApp(event)">
+            <div class="form-group">
+                <label>الاسم الكامل:</label>
+                <input type="text" id="name" required placeholder="أدخل اسمك الكامل">
+            </div>
+            
+            <div class="form-group">
+                <label>رقم الهاتف:</label>
+                <input type="tel" id="phone" required placeholder="رقم الهاتف للتواصل">
+            </div>
+            
+            <div class="form-group">
+                <label>العنوان (المدينة والحي):</label>
+                <input type="text" id="address" required placeholder="أدخل عنوان السكن">
+            </div>
+
+            <button type="submit" class="btn-order">تأكيد الطلب عبر الواتساب</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 نحلة الجبال ادوتنان - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+            
+            var phoneNumber = "212671044864";
+            
+            var message = "السلام عليكم، بغيت نطلب عسل الدغموس الجبلي (200 درهم):\n\n" +
+                          "👤 الاسم: " + name + "\n" +
+                          "📞 الهاتف: " + phone + "\n" +
+                          "📍 العنوان: " + address;
+            
+            var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+            
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
